@@ -1,2 +1,2 @@
 # fitness-tracker-app
-A React Agular fitness tracking app
+A React Angular fitness tracking app
