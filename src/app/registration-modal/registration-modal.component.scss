@@ -1,0 +1,24 @@
+#radio {
+    display: flex;
+    flex-direction: row;
+}
+
+#gender {
+    flex: 1;
+}
+
+#options {
+    flex: 1;
+}
+
+ion-radio.ios::part(container) {
+    width: 20px;
+    height: 20px;
+  
+    border: 2px solid grey;
+    border-radius: 4px;
+  }
+
+  #image_selector {
+    margin-top: 20px;
+  }

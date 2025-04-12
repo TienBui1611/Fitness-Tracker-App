@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Workout Log</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card id="daily_goals">
+  <ion-card-header>
+    Daily Goals
+  </ion-card-header>
+  <ion-card-content>
+    <p>Steps: {{ dailyGoals.steps }}</p>
+    <p>Calories: {{ dailyGoals.calories }}</p>
+    <p>Exercise minutes: {{ dailyGoals.minutes }}</p>
+    <ion-button expand="full" color="tertiary" size="small" (click)="navigateToDailyGoals()">Set Goals</ion-button>
+  </ion-card-content>
+</ion-card>
+
+<ion-content>
+  <!-- Editable and delitable list -->
+  <ion-list>
+    <ion-item-sliding *ngFor="let workout of workouts">
+      <ion-item>
+        <ion-label>{{ workout.date }}</ion-label>
+        <ion-note slot="end">{{ workout.type }}</ion-note>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option (click)="editWorkout(workout)">Edit</ion-item-option>
+        <ion-item-option color="danger" (click)="deleteWorkout(workout)">Delete</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+    <br>
+    <!-- Add items to the list -->
+    <ion-button expand="block" (click)="addWorkout()">Add Workout</ion-button>
+    <!-- Delete everything -->
+    <ion-button expand="block" size="small"(click)="deleteAllWorkouts()" color="danger">Delete All</ion-button>
+  </ion-list>
+
+</ion-content>

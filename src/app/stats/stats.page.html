@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Statistics</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item id="maplabel">Saved locations</ion-item>
+  <div #map id="map"></div>
+  <br>
+  <canvas #healthGraph height="240"></canvas>
+
+  <ion-item>
+    <ion-label>Month:</ion-label>
+    <input type="text" [(ngModel)]="newWorkoutMonth">
+  </ion-item>
+  <ion-item>
+    <ion-label>Workouts #:</ion-label>
+    <input type="tel" [(ngModel)]="newWorkout">
+  </ion-item>
+  <ion-button expand="full" size="small" (click)="addWorkout()">Add</ion-button>
+
+  <ion-item>
+    <ion-label>Delete workouts (month):</ion-label>
+    <ion-select [(ngModel)]="deleteMonth">
+      <ion-select-option *ngFor="let month of months" [value]="month">{{ month }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-button expand="full" size="small" (click)="deleteWorkoutByMonth()" color="medium">Delete</ion-button>
+</ion-content>

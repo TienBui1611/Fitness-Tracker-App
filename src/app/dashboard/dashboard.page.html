@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      Profile: {{ userEmail }}
+    </ion-card-header>
+    <ion-card-content>
+      <ion-avatar>
+        <!-- Display the avatar image -->
+        <img [src]="avatarUrl" *ngIf="avatarUrl" />
+        <ion-icon name="person-circle-outline" *ngIf="!avatarUrl"></ion-icon>
+      </ion-avatar>
+      <p id="name">{{ userProfile.name }}</p>
+      <!-- Button to select an image for the avatar -->
+      <ion-button (click)="selectImage()" size="small" shape="round" color="secondary">Change Avatar</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="navigateToStats()">
+    <ion-card-header>
+      Statistics
+      <br>
+      (CLICK FOR MORE INFO)
+    </ion-card-header>
+    <ion-card-content>
+      <div class="activity-item">
+        <img src="assets/stats.jpg" alt="Stats">
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" color="primary" (click)="startWorkout()">Start Workout</ion-button>
+  <ion-button expand="full" color="medium" (click)="logout()">Logout</ion-button>
+</ion-content>
