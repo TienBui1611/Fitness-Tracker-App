@@ -35,3 +35,43 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+/**
+ * Text Color Fix
+ * -----------------------------------------------------
+ * Ensures text is visible in both light and dark modes
+ */
+
+/* Light mode text colors */
+:root {
+  --ion-text-color: #000000;
+  --ion-text-color-rgb: 0, 0, 0;
+}
+
+/* Dark mode text colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ion-text-color: #ffffff;
+    --ion-text-color-rgb: 255, 255, 255;
+  }
+}
+
+/* Ensure ion-label text is visible */
+ion-label {
+  color: var(--ion-text-color) !important;
+}
+
+/* Ensure ion-item text is visible */
+ion-item {
+  color: var(--ion-text-color) !important;
+}
+
+/* Ensure input text is visible */
+input {
+  color: var(--ion-text-color) !important;
+}
+
+/* Ensure general text is visible */
+p, span, div, h1, h2, h3, h4, h5, h6 {
+  color: var(--ion-text-color);
+}

@@ -18,3 +18,26 @@ canvas {
   font-weight: bold;
   text-align: center;
 }
+
+/* Force Google Maps InfoWindow content to be black */
+:host ::ng-deep .gm-style-iw h4,
+:host ::ng-deep .gm-style-iw h1,
+:host ::ng-deep .gm-style-iw h2,
+:host ::ng-deep .gm-style-iw h3,
+:host ::ng-deep .gm-style-iw h5,
+:host ::ng-deep .gm-style-iw h6,
+:host ::ng-deep .gm-style-iw p,
+:host ::ng-deep .gm-style-iw span,
+:host ::ng-deep .gm-style-iw div {
+  color: #000000 !important;
+}
+
+/* Also target the InfoWindow container itself */
+:host ::ng-deep .gm-style .gm-style-iw-c {
+  color: #000000 !important;
+}
+
+/* Make sure InfoWindow background is white for contrast */
+:host ::ng-deep .gm-style-iw {
+  background-color: white !important;
+}
