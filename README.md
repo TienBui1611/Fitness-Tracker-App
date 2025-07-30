@@ -91,7 +91,6 @@ npx cap run android
 
 ## 📁 Project Structure
 
-
 ```
 Fitness-Tracker-App/
 ├── 📱 android/                          # Android native project
